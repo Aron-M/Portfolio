@@ -1,0 +1,58 @@
+{% extends "dashboard-base.html" %}
+
+{% block content %}
+
+<div class="container-lg">
+  <div class="row justify-content-center">
+    <div class="text-center mb-4">
+      <h1 class="justify-content-center">Edit a Skill</h1>
+      <h5 class="text-white">Click on an icon to edit</h5>
+      <h5 class="text-white">To view changes within the animated modal, go back to home page</h5>
+    </div>
+    <div class="col-md-5 mb-4">
+      <div class="bg-grey">
+        <form method="POST" class="edit">
+          {% csrf_token %}
+          <div class="form-group mb-4">
+            {{ skills_form.name.label_tag }}
+            {{ skills_form.name }}
+          </div>
+          <div class="form-group mb-4">
+            <label>(Choose an icon from 'devicon.dev' and paste .svg filepath here)</label>
+            {{ skills_form.icon.label_tag }}
+            {{ skills_form.icon }}
+          </div>
+          <div class="form-group mb-4">
+            {{ skills_form.description.label_tag }}
+            {{ skills_form.description }}
+          </div>
+          <div class="form-group mb-4">
+            <label>(For future use: when you later choose to include an image displaying a progress bar)</label>
+            {{ skills_form.progress.label_tag }}
+            {{ skills_form.progress }}
+          </div>
+          <div class="form-group mb-4">
+            {{ skills_form.category.label_tag }}
+            {{ skills_form.category }}
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-2">Edit</button>
+          </div>
+          <div class="text-center mt-3">
+            <a href="{% url 'dashboard' %}" class="btn btn-warning">Back</a>
+          </div>
+        </form>
+      </div>
+    </div>
+            <div class="col-md-7 mb-4">
+              <div class="bg-dark">
+                {% include 'components/skills/admin-skills.html' %}
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

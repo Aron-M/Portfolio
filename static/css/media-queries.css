@@ -1,0 +1,249 @@
+Small
+
+/* Custom CSS for mobile and tablet views */
+/* @media (min-width: 330px) and (max-width: 767px) {
+  .status-container {
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.8);
+    padding-top:0;
+  }
+
+  .status-text {
+    font-size: 0.8rem;
+  }
+
+  .study-images {
+    height: 3.3rem;
+  }
+
+  .ireland-flag {
+    height:5rem;
+  }.
+
+  .status-col {
+    width:fit-content !important;
+  }
+
+  .profile-container {
+    margin-right: 2rem;
+  }
+
+
+
+  .status-row {
+    display: flex;
+    justify-content: space-between;
+    max-width: 25rem;
+  }
+
+  .icon-section {
+    transform: scale(0.6);
+    position: relative;
+    left: 0;
+    transform-origin: top left;
+    overflow-x: visible;
+    white-space: nowrap;
+    width: min-content;
+  }
+
+  .modal-section {
+    transform: scale(0.5);
+    position: absolute;
+    right: 0;
+    bottom: 3rem;
+    transform-origin:25rem;
+    overflow-x: visible;
+    box-sizing: content-box;
+    max-width: 20rem;
+    max-height: 17rem;
+  }
+  
+  
+  .py-5 {
+   padding-top: 0 !important;
+   padding-bottom: 0 !important;
+  }
+
+  .project-card {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .card-text {
+    font-size: large;
+  }
+
+  .card-title {
+    font-size: larger;
+  }
+
+  .skills-box {
+    max-height: 30rem;
+  }
+
+  .intro-par1 {
+    margin-top: 0 !important;
+  }
+
+  .about-me-par {
+    margin-top: 0 !important;
+  }
+
+  #headings {
+    margin-bottom: 0 !important;
+  }
+
+  .text-start {
+    display: none;
+  }
+  
+
+}
+
+@media (min-width: 460px) and (max-width: 757px) {
+
+.status-container {
+display: flex;
+justify-self: center;
+}
+
+
+}
+
+@media (min-width: 480px) and (max-width: 757px) {
+.modal-section {
+  transform: scale(0.6);
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  justify-content: space-evenly;
+}
+}
+
+/* Media query for screen sizes between 769px and 990px */
+/* @media (min-width: 757px) and (max-width: 992px) {
+  
+  .status-images {
+    width: 4rem;
+    max-height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .study-images {
+    width: 5rem;
+    height: 3rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .status-text {
+    margin-top:1.5rem;
+  }
+
+  .ireland-flag {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .status-container {
+    display: flex;
+    flex-direction: column;
+    width: 60rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .status-box {
+    width: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .status-col {
+    padding:0;
+  }
+
+  .status-row {
+    width: 25rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .status-col {
+    width:fit-content !important;
+  }
+
+  .prof-pic{
+    margin-right:2rem;
+    display: block;
+  }
+
+  .intro-par-1,
+  .intro-par-2 {
+    width: 30rem;
+  }
+
+  .about-me-par {
+    margin-left: 2rem;
+    margin-top: 0 !important;
+  }
+
+  .project-card {
+    width: 38vw;
+  }
+  
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+  .status-container {
+    align-items: center;
+    transform: scale(0.9);
+    position: relative;
+    right: 0;
+    transform-origin:right;
+  }
+
+  .status-images {
+    height: 4rem;
+    margin-top:0.5rem;
+  }
+
+  .status-text {
+    font-size: 0.8rem;
+  }
+
+  .study-images {
+    width: 4rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .ireland-flag {
+    height: 4rem;
+  }
+
+  .project-card {
+    width: 38vw;
+  }
+
+}
+
+@media (min-width: 1200px) and (max-width: 2450px) {
+
+  .status-container {
+    align-items: center;
+    transform: scale(0.9);
+    position: relative;
+    right: 0;
+    transform-origin:right;
+  }
+} */ 

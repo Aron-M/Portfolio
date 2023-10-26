@@ -1,0 +1,48 @@
+{% extends "dashboard-base.html" %}
+
+{% block content %}
+<div class="container-lg">
+  <div class="row justify-content-center mt-4">
+    <div class="col">
+      <form method="POST" class="edit" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+          <h1>Edit Headings</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-5 mb-4">
+            <div class="bg-grey">
+              {% for field in headings_form %}
+                <div class="form-group mb-4">
+                  {{ field.label_tag }}
+                  {{ field }}
+                  {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                  {% endif %}
+                </div>
+              {% endfor %}
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </div>
+              <div class="text-center mt-3">
+                <a href="{% url 'dashboard' %}" class="btn btn-warning">Back</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="bg-dark">
+              {% include 'components/headings.html' %}
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+
+  <div class="personal-details">
+    {% for detail in data %}
+    <h4>Personal Details:</h4>
+    <div class="personal-details-field row">
+      <div class="col-4 personal-details-field-name">Name:</div>
+      <div class="col-8">{{ detail.full_name }}</div>
+    </div>
+    <div class="personal-details-field row">
+      <div class="col-4 personal-details-field-name">Nationality:</div>
+      <div class="col-8">
+        {% if detail.flag_nationality %}
+        <img src="{{ detail.flag_nationality.url }}" class="flag-icon" alt="Flag">
+        {% endif %}
+        {{ detail.nationality }}
+      </div>
+    </div>
+    <div class="personal-details-field row">
+      <div class="col-4 personal-details-field-name">Residency:</div>
+      <div class="col-8">
+        {% if detail.flag_residency %}
+        <img src="{{ detail.flag_residency.url }}" class="flag-icon" alt="Flag">
+        {% endif %}
+        {{ detail.residency }}
+      </div>
+    </div>
+    <div class="personal-details-field row">
+      <div class="col-4 personal-details-field-name">Languages:</div>
+      <div class="col-8">{{ detail.languages }}</div>
+    </div>
+    <div class="personal-details-field row">
+      <div class="col-4 personal-details-field-name">Studying:</div>
+      <div class="col-8">{{ detail.studying }}</div>
+    </div>
+    <div class="personal-details-field row">
+      <div class="col-4 personal-details-field-name"></div>
+      <img src="{{ detail.study_icon.url }}" class="ci-icon">
+    </div>
+    {% endfor %}
+  </div>

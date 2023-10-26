@@ -1,0 +1,92 @@
+{% extends "dashboard-base.html" %}
+
+{% block content %}
+<div class="container-lg">
+  <div class="row justify-content-center mt-4">
+    <div class="col">
+      <form method="POST" class="edit" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+          <h1 class="justify-content-center">Edit Personal Details</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-5 mb-4">
+            <div class="bg-grey">
+              <div class="form-group mb-4">
+                {{ personal_details_form.profile_image.label_tag }}
+                {{ personal_details_form.profile_image }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.full_name.label_tag }}
+                {{ personal_details_form.full_name }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.nationality.label_tag }}
+                {{ personal_details_form.nationality }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.flag_nationality.label_tag }}
+                {{ personal_details_form.flag_nationality }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.residency.label_tag }}
+                {{ personal_details_form.residency }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.flag_residency.label_tag }}
+                {{ personal_details_form.flag_residency }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.languages.label_tag }}
+                {{ personal_details_form.languages }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.studying.label_tag }}
+                {{ personal_details_form.studying }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.study_icon.label_tag }}
+                {{ personal_details_form.study_icon }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.paragraph_1.label_tag }}
+                {{ personal_details_form.paragraph_1 }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.paragraph_2.label_tag }}
+                {{ personal_details_form.paragraph_2 }}
+              </div>
+              <div class="form-group mb-4">
+                {{ personal_details_form.paragraph_3.label_tag }}
+                {{ personal_details_form.paragraph_3 }}
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <a href="{% url 'dashboard' %}" class="btn btn-warning">Go Back</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="row">
+              <div class="row-md-4 d-flex justify-content-center">
+                {% for detail in data %}
+                <img src="{{ detail.profile_image.url }}" alt="Profile Picture" class="img-fluid prof-pic">
+                {% endfor %}
+              </div>
+              <div class="row-md-8 justify-content-center">
+                {% include 'components/personal-details.html' %}
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  </form>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

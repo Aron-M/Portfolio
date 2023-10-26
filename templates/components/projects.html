@@ -1,0 +1,27 @@
+<section id="projects" class="container projects-container py-5">
+  <div class="container projects-section">
+    <h1 class="text-center" id="projects-header">PROJECTS</h1>
+    <div class="row">
+      <div class="col-md-12 text-start" style="height:5rem;">
+        <p id="lorem-text" class="lorem-text" style="display: none;"></p>
+      </div>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center">
+      {% for project in projects %}
+      <div class="project-card col-md-2 m-3 d-flex align-items-center justify-content-center">
+        <div class="card mb-4">
+          <img src="{{ project.image.url }}" alt="{{ project.name }}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.name }}</h5>
+            <p class="card-text d-flex justify-content-center fs-9">{{ project.description }}</p>
+            <img class="project-skills" src="{{ project.skills.icon }}">
+            <a href="{{ project.live_site }}" class="btn btn-success d-flex justify-content-center mb-1" target="_blank">Page</a>
+            <a href="{{ project.github_url }}" class="btn btn-primary d-flex justify-content-center" target="_blank">Github</a>
+            <p class="lorem-text" data-extra-info="{{ project.extra_info }}"></p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

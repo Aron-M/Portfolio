@@ -1,0 +1,41 @@
+{% extends "dashboard-base.html" %}
+
+{% block content %}
+
+<div class="container-lg">
+  <div class="row justify-content-center mt-4">
+    <div class="col">
+      <form method="POST" class="edit" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+          <h1 class="justify-content-center mb-4">DELETE PROJECTS</h1>
+          <h3 class="text-white">Click on a project to delete</h3>
+          <h4 class="text-white mb-4">WARNING! By clicking 'delete' you will remove the entire project and its content permanently</h4>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="bg-grey">
+              <div class="form-group mb-4">
+                {{ project_form.name.label_tag }}
+                {{ project_form.name }}
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+              <div class="text-center mt-3">
+                <a href="{% url 'dashboard' %}" class="btn btn-warning">Back</a>
+              </div>           
+            </div>
+          </div>
+          <div class="col-md-9 mb-4">
+            <div class="bg-dark">
+              {% include 'components/admin-delete-projects.html' %}
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

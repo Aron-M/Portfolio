@@ -1,0 +1,121 @@
+{% extends 'dashboard-base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body class="dashboard-body">
+  <div class="container">
+    <div class="header-container d-flex justify-content-center">
+      <h1>Admin Dashboard</h1>
+    </div>
+
+    <div class="container">
+      <div class="row box-row">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header text-center">Headings</div>
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <div class="image-container">
+                <img src="{% static 'media/dashboard-images/portfolio-home.png' %}" alt="Headings Image" class="img-fluid">
+              </div>
+              <div class="text-center mt-auto">
+                {% if user.is_authenticated %}
+                  <a href="{% url 'edit-headings' %}" class="btn btn-primary edit-button">Edit Heading</a>
+                {% else %}
+                  <a href="{% url 'account_login' %}?next={% url 'edit-headings' %}" class="btn btn-primary edit-button">Edit Heading</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header text-center">Skills</div>
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <div class="image-container">
+                <img src="{% static 'media/dashboard-images/skills-section.png' %}" alt="Skills Image" class="img-fluid">
+              </div>
+              <div class="text-center mt-auto">
+                {% if user.is_authenticated %}
+                  <div class="d-flex justify-content-between">
+                    <a href="{% url 'edit-skills' %}" class="nav-link btn btn-primary">Edit Skills</a>
+                    <div class="ml-3"></div>
+                    <a href="{% url 'add-skill' %}" class="nav-link btn btn-success">Add Skill</a>
+                    <div class="ml-3"></div>
+                    <a href="{% url 'delete-skill' %}" class="nav-link btn btn-danger">Delete Skill</a>
+                  </div>
+                {% else %}
+                  <div class="d-flex justify-content-between">
+                    <a href="{% url 'account_login' %}?next={% url 'edit-skills' %}" class="nav-link btn btn-primary">Edit Skills</a>
+                    <div class="ml-3"></div>
+                    <a href="{% url 'account_login' %}?next={% url 'add-skill' %}" class="nav-link btn btn-success">Add Skill</a>
+                    <div class="ml-3"></div>
+                    <a href="{% url 'account_login' %}?next={% url 'delete-skill' %}" class="nav-link btn btn-danger">Delete Skill</a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header text-center">Projects</div>
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <div class="image-container">
+                <img src="{% static 'media/dashboard-images/projects.png' %}" alt="Projects Image" class="img-fluid">
+              </div>
+              <div class="text-center mt-auto">
+                {% if user.is_authenticated %}
+                  <div class="d-flex justify-content-between">
+                    <a href="{% url 'edit-projects' %}" class="nav-link btn btn-primary">Edit Projects</a>
+                    <div class="ml-3"></div>
+                    <a href="{% url 'add-project' %}" class="nav-link btn btn-success">Add Project</a>
+                    <div class="ml-3"></div>
+                    <a href="{% url 'delete-project' %}" class="nav-link btn btn-danger">Delete Project</a>
+                  </div>
+                {% else %}
+                  <div class="d-flex justify-content-between">
+                    <a href="{% url 'account_login' %}?next={% url 'edit-projects' %}" class="nav-link btn btn-primary">Edit Projects</a>
+                    <div class="ml-3"></div>
+                    <a href="{% url 'account_login' %}?next={% url 'add-project' %}" class="nav-link btn btn-success">Add Project</a>
+                    <div class="ml-3"></div>
+                    <a href="{% url 'account_login' %}?next={% url 'delete-project' %}" class="nav-link btn btn-danger">Delete Project</a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header text-center">Personal Details</div>
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <div class="image-container">
+                <img src="{% static 'media/dashboard-images/about-me.png' %}" alt="Personal Details Image" class="img-fluid personal-details-img">
+              </div>
+              <div class="text-center mt-auto">
+                {% if user.is_authenticated %}
+                  <a href="{% url 'edit-personal-details' %}" class="btn btn-primary edit-button">Edit Details</a>
+                {% else %}
+                  <a href="{% url 'account_login' %}?next={% url 'edit-personal-details' %}" class="btn btn-primary edit-button">Edit Details</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+{% endblock %}

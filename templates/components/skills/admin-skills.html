@@ -1,0 +1,26 @@
+<section id="skills" class="container skills-container py-12">
+    <div class="skills-container">
+      <h1 id="skills-id">SKILLS</h1>
+      <h5 id="skills-id" class="skills-subheader">Click icons to view details</h5>
+      <div class="row">
+        <div class="model-container col-lg-12">
+          {% for category in category %}
+        <div class="row">
+          <div class="model-item col-md-2">
+            <h6 class="category-names">{{ category.name }}</h6>
+          </div>
+          <div class="model-item col-md-10">
+            <ul class="lang_img">
+              {% for skills in skills %}
+              {% if skills.category == category %}
+              <li class="d-inline-block icon-box">
+                <a href="{% url 'edit-skills' skills.id %}"><img class="modal-image" 
+                    src="{{ skills.icon }}" alt="{{ skills.name }}" title="{{ skills.description }}"></a></li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+    </div>  
+  </section>

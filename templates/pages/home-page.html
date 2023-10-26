@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<!-- Headings Section -->
+<section id="headings">
+  {% include 'components/headings.html' %}
+</section>
+
+
+
+<!-- Skills Section -->
+<section id="skills">
+  {% include 'components/skills/skills.html' %}
+</section>
+
+
+<!-- Projects Section -->
+
+<section id="projects">
+  {% include 'components/projects.html' %}
+</section>
+
+
+
+<!--Contact Section-->
+
+<section id="contact">
+  {% include 'components/contact.html' %}
+</section>
+
+
+<div class="section-break"></div>
+
+
+<!--CV Download Section-->
+
+<section id="cv" class="bg-light py-5">
+  {% include 'components/cv.html' %}
+</section>
+
+{% endblock %}

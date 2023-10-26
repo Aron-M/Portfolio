@@ -1,0 +1,60 @@
+{% extends "dashboard-base.html" %}
+
+{% block content %}
+
+<div class="container-lg">
+  <div class="row justify-content-center mt-4">
+    <div class="col">
+      <form method="POST" class="edit" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+          <h1 class="justify-content-center">Edit Projects</h1>
+          <h4 class="text-white">Click on a Project card to edit</h4>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="bg-grey">
+              <div class="form-group mb-4">
+                {{ project_form.name.label_tag }}
+                {{ project_form.name }}
+              </div>
+              <div class="form-group mb-4">
+                {{ project_form.image.label_tag }}
+                {{ project_form.image }}
+              </div>
+              <div class="form-group mb-4">
+                {{ project_form.description.label_tag }}
+                {{ project_form.description }}
+              </div>
+              <div class="form-group mb-4">
+                {{ project_form.live_site.label_tag }}
+                {{ project_form.live_site }}
+            </div>
+              <div class="form-group mb-4">
+                {{ project_form.github_url.label_tag }}
+                {{ project_form.github_url }}
+              </div>
+              <div class="form-group mb-4">
+                {{ project_form.extra_info.label_tag }}
+                {{ project_form.extra_info }}
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </div>
+              <div class="text-center mt-3">
+                <a href="{% url 'dashboard' %}" class="btn btn-warning">Back</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 mb-4">
+            <div class="bg-dark">
+              {% include 'components/admin-projects.html' %}
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

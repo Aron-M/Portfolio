@@ -1,0 +1,31 @@
+{% load static %}
+
+<div id="modal-div" class="col-lg-12 d-flex align-items-center justify-content-end">
+  <div id="modal-box" class="col-lg-12 d-flex align-items-center justify-content-end">
+    <div class="row">
+      <div id="modal-display-content" class="modal-content col-md-6">
+        <span class="modal-close-button"">&times;</span>
+        <div class="row">
+          <div class="col-md-4 d-flex justify-content-center">
+            <img id="modal-image" class="modal-image modal-image-inside" src="" alt="Modal Image">
+          </div>
+          <div class="col-md-8 d-flex justify-content-center title-box">
+            <h2 id="modal-title"></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p id="modal-text"></p>
+          </div>
+        </div>
+        <div id="static-modal-content" class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+      </div>
+      <div id="avatar-img" class="col-md-12 mt-3 d-flex align-items-center justify-content-end">
+        <img class="avatar" src="{% static 'media/skills-images/business-person.png' %}" alt="avatar2">
+      </div>
+    </div>
+  </div>
+</div>
